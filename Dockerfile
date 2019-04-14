@@ -6,5 +6,6 @@ RUN go build -o myapp .
 FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /go/src/github.com/nozaq/example-docker-multistage-go/myapp .
-CMD ["./myapp"]
 
+EXPOSE 8080
+CMD ["./myapp"]
